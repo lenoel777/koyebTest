@@ -1,0 +1,16 @@
+name: example-flask-app
+type: web
+regions:
+  - fra # Select the region, such as fra (Frankfurt) or any other supported by Koyeb
+services:
+  - name: flask-service
+    port: 8080 # Port your application will use
+    env:
+      - name: PORT
+        value: 8080
+    build:
+      type: buildpack
+      runtime: python
+    routes:
+      - path: /
+
